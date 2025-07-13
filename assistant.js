@@ -2,12 +2,11 @@
 function PersonalAssistant(name) {
   this.name = name;
   this.tasks = [];
-  this.mood = 'neutral';
+  this.mood = "indifferent";
 }
 
 PersonalAssistant.prototype.addTask = function(task) {
   this.tasks.push(task);
-  console.log(`${this.name} added task: "${task}"`);
 };
 
 PersonalAssistant.prototype.completeTask = function() {
@@ -28,14 +27,18 @@ const jarvis = new PersonalAssistant('Jarvis');
 console.log(`Hi! I'm ${jarvis.name}, your assistant.`);
 
 jarvis.addTask('Finish CS81 Module 6 assignment');
-jarvis.addTask('Review Lab instructions');
-jarvis.addTask('Write thank-you email to tutee parent');
+jarvis.addTask('Review for CS87A Midterm');
+jarvis.addTask('Write thank you email to tutee parent for gift');
 
-jarvis.mood = 'productive';
+console.log(`You have ${jarvis.tasks.length} tasks left.`);
+
+jarvis.mood = 'motivated';
+
 jarvis.reportMood();
 
 jarvis.completeTask();
 jarvis.completeTask();
 
-jarvis.mood = 'accomplished';
+jarvis.mood = 'tired';
+
 jarvis.reportMood();
